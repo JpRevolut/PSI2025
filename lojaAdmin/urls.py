@@ -19,9 +19,12 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import include
+#from loja.views.ProfileView import list_produto_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('loja.urls.HomeUrls')),
     path('produto/', include('loja.urls.Produtourls')),
+    #path("", list_produto_view, name='produtos'),
+    #path("<int:id>", list_produto_view, name='produto'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
